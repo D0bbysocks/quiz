@@ -1,0 +1,783 @@
+/* =========================================
+   DESIGN TOKENS
+   ========================================= */
+:root {
+  /* ---------- RAW PALETTE ---------- */
+
+  /* Base */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Grey */
+  --grey-500: #626c7f;
+  --grey-50:  #f4f6fa;
+
+  /* Blue */
+  --blue-950: #2d3949;
+  --blue-900: #313e51;
+  --blue-850: #3b4d66;
+  --blue-500: #306aff;
+  --blue-300: #abc1e1;
+  --blue-100: #edf1f9;
+  --blue-50:  #ebf0ff;
+
+  /* Green */
+  --green-500: #2fd887;
+  --green-100: #e0fdef;
+
+  /* Purple */
+  --purple-600: #a729f5;
+  --purple-100: #f6e7ff;
+
+  /* Orange */
+  --orange-400: #ff7e35;
+  --orange-50:  #fff5ed;
+
+  /* Red */
+  --red-500: #ee5454;
+
+  /* ---------- SEMANTIC COLORS (DEFAULTS, OVERRIDDEN BY THEMES) ---------- */
+
+  /* Primary brand */
+  --color-primary: var(--purple-600);
+  --color-primary-soft: var(--purple-100);
+
+  /* Status */
+  --color-success: var(--green-500);
+  --color-success-soft: var(--green-100);
+  --color-warning: var(--orange-400);
+  --color-warning-soft: var(--orange-50);
+  --color-danger: var(--red-500);
+
+  /* Background / Text / Border – werden in Themes überschrieben */
+  --color-bg: var(--blue-900);
+  --color-bg-elevated: var(--blue-850);
+  --color-bg-soft: var(--blue-950);
+
+  --color-surface: var(--blue-850);
+  --color-surface-soft: var(--blue-950);
+
+  --color-text: var(--white);
+  --color-text-muted: var(--blue-300);
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input-bg: transparent;
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-sans: "Rubik", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  /* ---------- FONT SIZES (px-Namen, Werte in rem) ---------- */
+  --font-144: 9rem;      /* 144px */
+  --font-100: 6.25rem;   /* 100px */
+  --font-88: 5.5rem;     /* 88px  */
+  --font-64: 4rem;       /* 64px  */
+  --font-40: 2.5rem;     /* 40px  */
+  --font-36: 2.25rem;    /* 36px  */
+  --font-28: 1.75rem;    /* 28px  */
+  --font-24: 1.5rem;     /* 24px  */
+  --font-20: 1.25rem;    /* 20px  */
+  --font-18: 1.125rem;   /* 18px  */
+  --font-14: 0.875rem;   /* 14px  */
+
+  /* ---------- LINE HEIGHTS ---------- */
+  --line-100: 1;     /* 100% */
+  --line-120: 1.2;   /* 120% */
+  --line-150: 1.5;   /* 150% */
+
+  /* Letter Spacing */
+  --tracking-0: 0;
+
+  /* ---------- SPACING ---------- */
+  --spacing-8:   0.5rem;    /*  8px  */
+  --spacing-16:  1rem;      /* 16px */
+  --spacing-24:  1.5rem;    /* 24px */
+  --spacing-32:  2rem;      /* 32px */
+  --spacing-40:  2.5rem;    /* 40px */
+  --spacing-48:  3rem;      /* 48px */
+  --spacing-64:  4rem;      /* 64px */
+  --spacing-128: 8rem;      /* 128px */
+  --spacing-144: 9rem;      /* 144px */
+  --spacing-184: 11.5rem;   /* 184px */
+
+  /* ---------- RADIUS / SHADOWS ---------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.15);
+
+  /* ---------- BREAKPOINTS ---------- */
+  --bp-sm: 600px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}
+
+/* =========================================
+   THEMES
+   ========================================= */
+
+/* Dark Theme (Standard) */
+:root[data-theme="dark"],
+:root:not([data-theme]) {
+  --color-bg: var(--blue-900);
+  --color-bg-elevated: var(--blue-850);
+  --color-bg-soft: var(--blue-950);
+
+  --color-surface: var(--blue-850);
+  --color-surface-soft: var(--blue-950);
+
+  --color-text: var(--white);
+  --color-text-muted: var(--blue-300);
+
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-input-bg: var(--blue-950);
+
+  --logo-bg-soft: var(--purple-100);
+
+  --quiz-bg: var(--blue-50);
+
+  /* Hintergrundbild */
+  --bg-image: url("./starter-code/assets/images/pattern-background-mobile-dark.svg");
+
+  /* Icons */
+  --icon-sun: url("./starter-code/assets/images/icon-sun-light.svg");
+  --icon-moon: url("./starter-code/assets/images/icon-moon-light.svg");
+
+  @media (min-width: 768px) {
+    /* tablet overrides */
+    --bg-image: url("./starter-code/assets/images/pattern-background-tablet-dark.svg");
+  }
+
+  @media (min-width: 1024px) {
+    /* tablet overrides */
+    --bg-image: url("./starter-code/assets/images/pattern-background-desktop-dark.svg");
+  }
+}
+
+/* Light Theme */
+:root[data-theme="light"] {
+  --color-bg: var(--grey-50);
+  --color-bg-elevated: var(--white);
+  --color-bg-soft: var(--blue-50);
+
+  --color-surface: var(--white);
+  --color-surface-soft: var(--blue-50);
+
+  --color-text: var(--blue-900);
+  --color-text-muted: var(--grey-500);
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-input-bg: var(--white);
+
+
+  --quiz-bg: var(--grey-50); 
+
+  /* Hintergrundbild */
+  --bg-image: url("./starter-code/assets/images/pattern-background-mobile-light.svg");
+
+  /* Icons */
+  --icon-sun: url("./starter-code/assets/images/icon-sun-dark.svg");
+  --icon-moon: url("./starter-code/assets/images/icon-moon-dark.svg");
+
+  @media (min-width: 768px) {
+    /* tablet overrides */
+    --bg-image: url("./starter-code/assets/images/pattern-background-tablet-light.svg");
+  }
+
+  @media (min-width: 1024px) {
+    /* tablet overrides */
+    --bg-image: url("./starter-code/assets/images/pattern-background-desktop-light.svg");
+  }
+}
+
+:root[data-theme="dark"] .toggle-knob::after {
+  transform: translateX(20px);
+}
+
+/* =========================================
+   FONT-FACE
+   ========================================= */
+@font-face {
+  font-family: "Rubik";
+  src: url("./starter-code/assets/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================================================
+   MODERN CSS RESET
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   GLOBAL LAYOUT / BACKGROUND
+   ========================================= */
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* =========================================
+   TEXT PRESETS
+   ========================================= */
+
+/* Text Preset 1
+   Desktop: Rubik Medium, 144px, 100%
+   Mobile: Rubik Medium, 88px, 100% */
+.text-preset-1 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-144);
+  line-height: var(--line-100);
+  letter-spacing: var(--tracking-0);
+}
+
+@media (max-width: 768px) {
+  .text-preset-1 {
+    font-size: var(--font-88);
+  }
+}
+
+/* Text Preset 2 (Medium)
+   Desktop: Rubik Medium, 64px, 100%
+   Mobile: Rubik Medium, 40px, 100% */
+.text-preset-2-medium {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-64);
+  line-height: var(--line-100);
+  letter-spacing: var(--tracking-0);
+}
+
+@media (max-width: 768px) {
+  .text-preset-2-medium {
+    font-size: var(--font-40);
+  }
+}
+
+/* Text Preset 2 (Light)
+   Desktop: Rubik Light, 64px, 100%
+   Mobile: Rubik Light, 40px, 100% */
+.text-preset-2-light {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-64);
+  line-height: var(--line-100);
+  letter-spacing: var(--tracking-0);
+}
+
+@media (max-width: 768px) {
+  .text-preset-2-light {
+    font-size: var(--font-40);
+  }
+}
+
+/* Text Preset 3
+   Desktop: Rubik Medium, 36px, 120%
+   Mobile: Rubik Medium, 20px, 120% */
+.text-preset-3 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-36);
+  line-height: var(--line-120);
+  letter-spacing: var(--tracking-0);
+}
+
+@media (max-width: 768px) {
+  .text-preset-3 {
+    font-size: var(--font-20);
+  }
+}
+
+/* Text Preset 4
+   Desktop: Rubik Medium, 24px (angenommen), 100%
+   Mobile: Rubik Medium, 18px, 100% */
+.text-preset-4 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-24);
+  line-height: var(--line-100);
+  letter-spacing: var(--tracking-0);
+}
+
+@media (max-width: 768px) {
+  .text-preset-4 {
+    font-size: var(--font-18);
+  }
+}
+
+/* Text Preset 5
+   Desktop Medium: Rubik Medium, 24px, 150%
+   Desktop Regular: Rubik Regular, 24px, 150%
+   Mobile: Italic, 14px, 150% */
+.text-preset-5-medium {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-24);
+  line-height: var(--line-150);
+  letter-spacing: var(--tracking-0);
+}
+
+.text-preset-5-regular {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-24);
+  line-height: var(--line-150);
+  letter-spacing: var(--tracking-0);
+}
+
+@media (max-width: 768px) {
+  .text-preset-5-medium,
+  .text-preset-5-regular {
+    font-size: var(--font-14);
+    font-style: italic;
+  }
+}
+
+/* Text Preset 6
+   Desktop: Rubik Italic, 20px, 150% */
+.text-preset-6 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-style: italic;
+  font-size: var(--font-20);
+  line-height: var(--line-150);
+  letter-spacing: var(--tracking-0);
+}
+
+
+
+/* Standarts */
+.hidden {
+  display: none !important;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+
+/* =========================================
+   CARD / LAYOUT COMPONENTS
+   ========================================= */
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px var(--spacing-24);
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+
+
+/* Theme Toggle */
+.card-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: auto;
+  height: 40px;
+}
+
+.icon-sun,
+.icon-moon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon-sun {
+  background-image: var(--icon-sun);
+}
+
+.icon-moon {
+  background-image: var(--icon-moon);
+}
+
+.toggle-knob {
+  width: 40px;
+  height: 20px;
+  background: var(--color-primary);   /* Track = purple */
+  border-radius: 999px;
+  position: relative;
+  transition: background 0.25s ease;
+}
+
+.toggle-knob::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--white);           /* Kugel = weiß */
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+
+  /* Headline */
+  .welcome h1 {
+    margin-top: var(--spacing-8);
+  }
+
+  #quiz-subtitle {
+    margin-top: var(--spacing-16);
+    color: var(--color-text-muted);
+  }
+
+  @media (min-width: 768px) {
+    #quiz-subtitle {
+      margin-top: var(--spacing-48);
+      /* Switch Preset 5 to 6 */
+      font-size: var(--font-20);  /* 20px → Preset 6 */
+      line-height: var(--line-150);
+      margin-top: var(--spacing-48); /* dein Tablet-Abstand */
+      font-style: italic;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #quiz-subtitle {
+      margin-top: var(--spacing-48);
+    }
+  }
+
+/* Card Body */
+.card-body {
+  padding: var(--spacing-32) var(--spacing-24);
+}
+
+
+/* Game Cards */
+.pickup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16) ;
+  margin-top: clamp(var(--spacing-40), 4vw, var(--spacing-64));
+}
+
+.game-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--spacing-16), 4vw, var(--spacing-32));
+  width: 100%;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-16);
+}
+
+.game-card__icon {
+  height: clamp(40px, 5vw, 56px);
+  width: clamp(40px, 5vw, 56px);
+  background-image: url(./starter-code/assets/images/icon-html.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.css .game-card__icon {
+  background-image: url(./starter-code/assets/images/icon-css.svg);
+}
+
+.js .game-card__icon {
+  background-image: url(./starter-code/assets/images/icon-js.svg);
+}
+
+.accs .game-card__icon {
+  background-image: url(./starter-code/assets/images/icon-accessibility.svg);
+}
+
+
+
+@media (min-width: 768px) {
+  .card-body,
+  .card-header {
+    padding-inline: 0;
+  }  
+}
+    
+
+@media (min-width: 1200px) {
+    .app {
+      max-width: 1160px;
+      margin-top: 97px;
+    }
+    .screen {
+      display: flex;
+      gap: var(--spacing-128);
+      width: 100%;
+    }
+
+    .card-body {
+      margin-top: 99px;
+    }
+
+    .welcome {
+      width: 40.2%;
+    }
+
+    .pickup {
+      width: 48.6%;
+      margin-top: 0;
+    }
+    .card-body,
+    .card-header {
+      padding: 0;
+    }
+  }
+
+
+/* Score Card */
+/*            */
+
+/* Header Logo */
+
+.card-header-left {
+  display: flex;
+  gap: clamp(var(--spacing-16), 5vw, var(--spacing-24));
+  align-items: center;
+}
+
+.logo {
+  height: clamp(40px, 4vw, 56px);
+  width: clamp(40px, 4vw, 56px);
+  background-size: clamp(28.57px, 3vw, 40px);
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-md);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* Score Body */
+
+.score-result-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--spacing-16), 4vw, var(--spacing-32));
+  margin-top: clamp(var(--spacing-40), 4vw, var(--spacing-64));
+}
+
+.score-result--screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--spacing-32 ), 4vw, var(--spacing-48));
+}
+
+.score-result-logo {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--spacing-16), 4vw, var(--spacing-24));
+}
+
+#score {
+  margin-top: clamp(var(--spacing-16), 4vw, var(--spacing-40));
+}
+
+#score-outOf {
+  margin-top: var(--spacing-16);
+}
+
+/* BTN */
+.play-again {
+  background-color: var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--spacing-16), 4vw, var(--spacing-32));
+  color: var(--white);
+}
+
+
+
+@media (min-width: 1200px) {
+  .score-result-wrapper {
+    width: 48.76%;
+    margin-top: 0;
+  }
+  }
+
+
+
+
+
+/*    Quiz      */
+/*             */
+
+#current-question {
+  margin-top: clamp(var(--spacing-16), 4vw, var(--spacing-24));
+}
+
+
+
+
+
+/* Timer */
+.quiz-timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: clamp(var(--spacing-24), 4vw, var(--spacing-40));
+  height: var(--spacing-16);
+  padding: .25rem;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.quiz-timer__progressbar {
+  height: var(--spacing-8);
+  background-color: var(--purple-600);
+  border-radius: var(--radius-md);
+  width: 10%;
+  transition: width 0.2s linear;
+}
+
+
+
+/* Quiz Answer */
+.quiz-answer__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--spacing-16), 4vw, var(--spacing-24));
+  margin-top: var(--spacing-40);
+}
+
+.quiz-answer__btn-option {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--spacing-16), 4vw, var(--spacing-32));
+  width: 100%;
+  padding: var(--spacing-16);
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+}
+
+/* Submit btn */
+.quiz-answer__btn {
+  width: 100%;
+  padding: var(--spacing-16);
+  background-color: var(--purple-600);
+  border-radius: var(--radius-lg);  
+  color: var(--white);
+  margin-top: clamp(var(--spacing-16), 4vw, var(--spacing-32));                
+}
+
+.quiz-answer__option-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: clamp(var(--spacing-40), 4vw, 3.5rem);
+  height: clamp(var(--spacing-40), 4vw, 3.5rem);
+  background-color: var(--quiz-bg);
+  border-radius: 6px;
+  color: var(--grey-500);
+  text-align: center;
+}
+
+.quiz-answer__btn-option.is-selected {
+  border: 2px solid var(--purple-600);
+}
+
+.quiz-answer__btn-option.is-selected .quiz-answer__option-label {
+  background-color: var(--purple-600);
+  color: white;
+}
+
+@media (min-width: 1200px) {
+    .quiz-answer {
+      width: 54.80%;
+    }
+
+    .quiz-headline {
+      width: 45.20%;
+    }
+    .quiz-answer__list {
+      margin-top: 0;
+    }
+  }

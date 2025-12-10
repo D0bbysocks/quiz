@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./starter-code/assets/images/favicon-32x32.png">
+  <script type="module" src="script.js"></script>
+  <title>Frontend Mentor | Frontend quiz app</title>
+</head>
+<body>
+  <main class="app">
+    <section class="card" aria-labelledby="app-title">
+      <!-- Card Header -->
+      <header class="card-header">
+        <div class="card-header-left">
+          <div class="logo is-hidden"></div>
+          <p class="text-preset-4 logo-text"></p>
+        </div>
+        <div class="card-header-right">
+          <div class="btn-wrapper--mode">
+            <button
+              class="theme-toggle"
+              type="button"
+              role="switch"
+              aria-checked="false"
+              aria-label="Switch to dark mode"
+            >
+              <!-- Icons nur für Optik -->
+              <span class="icon-sun" aria-hidden="true"></span>
+              <span class="toggle-knob"></span>
+              <span class="icon-moon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Inhalt der Card -->
+      <div class="card-body">
+        <!-- Start Screen: Quiz-Auswahl -->
+        <section class="screen screen--start">
+          <div class="welcome">
+            <h2 class="text-preset-2-light">Welcome to the</h2>
+            <h1 class="text-preset-2-medium">Frontend Quiz!</h1>
+            <p class="text-preset-5-regular" id="quiz-subtitle">
+              Pick a subject to get started.
+            </p>
+          </div>
+
+          <!-- Gruppe der auswählbaren Fächer -->
+          <ul class="pickup text-preset-4" aria-labelledby="quiz-subtitle">
+            <li>
+              <button
+                class="game-card html"
+                type="button"
+              >
+                <span class="game-card__icon" aria-hidden="true"></span>
+                <span class="game-card__title">HTML</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="game-card css"
+                type="button"
+              >
+                <span class="game-card__icon" aria-hidden="true"></span>
+                <span class="game-card__title">CSS</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="game-card js"
+                type="button"
+              >
+                <span class="game-card__icon" aria-hidden="true"></span>
+                <span class="game-card__title">JavaScript</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="game-card accs"
+                type="button"
+              >
+                <span class="game-card__icon" aria-hidden="true"></span>
+                <span class="game-card__title">Accessibility</span>
+              </button>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section class="screen screen--quiz is-hidden">
+          <div class="quiz-headline">
+            <div class="quiz-question">
+              <p class="text-preset-5-regular">Question 1 of 10</p>
+              <h2 class="text-preset-3" id="current-question">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h2>
+            </div>
+            <div class="quiz-timer">
+              <div class="quiz-timer__progressbar"></div>
+            </div>
+          </div>
+          <div class="quiz-answer">
+            <ul class="quiz-answer__list">
+              <li class="quiz-answer__item">
+                <button class="quiz-answer__btn-option">
+                  <span class="quiz-answer__option-label text-preset-4">A</span>
+                  <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                </button>
+              </li>
+              <li class="quiz-answer__item">
+                <button class="quiz-answer__btn-option">
+                  <span class="quiz-answer__option-label text-preset-4">B</span>
+                  <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                </button>
+              </li>
+              <li class="quiz-answer__item">
+                <button class="quiz-answer__btn-option">
+                  <span class="quiz-answer__option-label text-preset-4">C</span>
+                  <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                </button>
+              </li>
+              <li class="quiz-answer__item">
+                <button class="quiz-answer__btn-option">
+                  <span class="quiz-answer__option-label text-preset-4">D</span>
+                  <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                </button>
+              </li>
+            </ul>
+
+            <button class="quiz-answer__btn text-preset-4">Submit Answer</button>
+          </div>
+        </section>
+
+
+         <!-- Ergebnis Screen -->
+        <section class="screen screen--result is-hidden">
+          <div class="score-headline">
+            <h2 class="text-preset-2-light">Quiz completed</h3>
+            <h3 class="text-preset-2-medium">You scored...</h4>
+          </div>
+          <div class="score-result-wrapper">
+            <div class="score-result--screen">
+              <div class="score-result-logo">
+                <div class="logo"></div>
+                <p class="text-preset-4 logo-text">Accessibility</p>
+              </div>
+              <p id="score" class="text-preset-1">8</p>
+              <p id="score-outOf" class="text-preset-4">out of 10</p>
+            </div>
+            <button class="play-again text-preset-4" type="button">Play Again</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+ 
+</body>
+</html>
