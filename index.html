@@ -92,7 +92,7 @@
         <section class="screen screen--quiz is-hidden">
           <div class="quiz-headline">
             <div class="quiz-question">
-              <p class="text-preset-5-regular">Question 1 of 10</p>
+              <p class="text-preset-5-regular" id="quest-counter"></p>
               <h2 class="text-preset-3" id="current-question">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h2>
             </div>
             <div class="quiz-timer">
@@ -105,29 +105,34 @@
                 <button class="quiz-answer__btn-option">
                   <span class="quiz-answer__option-label text-preset-4">A</span>
                   <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                  <span class="quiz-answer__option-icon is-hidden"></span>
                 </button>
               </li>
               <li class="quiz-answer__item">
                 <button class="quiz-answer__btn-option">
                   <span class="quiz-answer__option-label text-preset-4">B</span>
                   <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                  <span class="quiz-answer__option-icon is-hidden"></span>
                 </button>
               </li>
               <li class="quiz-answer__item">
                 <button class="quiz-answer__btn-option">
                   <span class="quiz-answer__option-label text-preset-4">C</span>
                   <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                  <span class="quiz-answer__option-icon is-hidden"></span>
                 </button>
               </li>
               <li class="quiz-answer__item">
                 <button class="quiz-answer__btn-option">
                   <span class="quiz-answer__option-label text-preset-4">D</span>
                   <span class="quiz-answer__option-text text-preset-4">Option A</span>
+                  <span class="quiz-answer__option-icon is-hidden"></span>
                 </button>
               </li>
             </ul>
 
             <button class="quiz-answer__btn text-preset-4">Submit Answer</button>
+            <div class="error__noAnswer is-hidden"><div class="error__noAnswerIcon"></div><span>Please select an answer</span></div>
           </div>
         </section>
 

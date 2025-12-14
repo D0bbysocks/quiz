@@ -124,6 +124,7 @@
 
 /* =========================================
    THEMES
+   - Achtung: Reihenfolge + Overrides wichtig
    ========================================= */
 
 /* Dark Theme (Standard) */
@@ -291,9 +292,7 @@ body {
    TEXT PRESETS
    ========================================= */
 
-/* Text Preset 1
-   Desktop: Rubik Medium, 144px, 100%
-   Mobile: Rubik Medium, 88px, 100% */
+/* Text Preset 1 */
 .text-preset-1 {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-medium);
@@ -308,9 +307,7 @@ body {
   }
 }
 
-/* Text Preset 2 (Medium)
-   Desktop: Rubik Medium, 64px, 100%
-   Mobile: Rubik Medium, 40px, 100% */
+/* Text Preset 2 (Medium) */
 .text-preset-2-medium {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-medium);
@@ -325,9 +322,7 @@ body {
   }
 }
 
-/* Text Preset 2 (Light)
-   Desktop: Rubik Light, 64px, 100%
-   Mobile: Rubik Light, 40px, 100% */
+/* Text Preset 2 (Light) */
 .text-preset-2-light {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-light);
@@ -342,9 +337,7 @@ body {
   }
 }
 
-/* Text Preset 3
-   Desktop: Rubik Medium, 36px, 120%
-   Mobile: Rubik Medium, 20px, 120% */
+/* Text Preset 3 */
 .text-preset-3 {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-medium);
@@ -359,9 +352,7 @@ body {
   }
 }
 
-/* Text Preset 4
-   Desktop: Rubik Medium, 24px (angenommen), 100%
-   Mobile: Rubik Medium, 18px, 100% */
+/* Text Preset 4 */
 .text-preset-4 {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-medium);
@@ -376,10 +367,7 @@ body {
   }
 }
 
-/* Text Preset 5
-   Desktop Medium: Rubik Medium, 24px, 150%
-   Desktop Regular: Rubik Regular, 24px, 150%
-   Mobile: Italic, 14px, 150% */
+/* Text Preset 5 */
 .text-preset-5-medium {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-medium);
@@ -404,8 +392,7 @@ body {
   }
 }
 
-/* Text Preset 6
-   Desktop: Rubik Italic, 20px, 150% */
+/* Text Preset 6 */
 .text-preset-6 {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-regular);
@@ -415,9 +402,10 @@ body {
   letter-spacing: var(--tracking-0);
 }
 
-
-
-/* Standarts */
+/* =========================================
+   UTILITIES (Display helpers)
+   - Du nutzt beide. Das ist ok, aber redundant.
+   ========================================= */
 .hidden {
   display: none !important;
 }
@@ -425,7 +413,6 @@ body {
 .is-hidden {
   display: none !important;
 }
-
 
 /* =========================================
    CARD / LAYOUT COMPONENTS
@@ -442,8 +429,6 @@ body {
   margin: 0 auto;
   max-width: 640px;
 }
-
-
 
 /* Theme Toggle */
 .card-header-right {
@@ -498,39 +483,37 @@ body {
   transition: transform 0.25s ease;
 }
 
+/* Headline */
+.welcome h1 {
+  margin-top: var(--spacing-8);
+}
 
-  /* Headline */
-  .welcome h1 {
-    margin-top: var(--spacing-8);
-  }
+#quiz-subtitle {
+  margin-top: var(--spacing-16);
+  color: var(--color-text-muted);
+}
 
+@media (min-width: 768px) {
   #quiz-subtitle {
-    margin-top: var(--spacing-16);
-    color: var(--color-text-muted);
+    margin-top: var(--spacing-48);
+    /* Switch Preset 5 to 6 */
+    font-size: var(--font-20);  /* 20px → Preset 6 */
+    line-height: var(--line-150);
+    margin-top: var(--spacing-48); /* dein Tablet-Abstand */
+    font-style: italic;
   }
+}
 
-  @media (min-width: 768px) {
-    #quiz-subtitle {
-      margin-top: var(--spacing-48);
-      /* Switch Preset 5 to 6 */
-      font-size: var(--font-20);  /* 20px → Preset 6 */
-      line-height: var(--line-150);
-      margin-top: var(--spacing-48); /* dein Tablet-Abstand */
-      font-style: italic;
-    }
+@media (min-width: 1024px) {
+  #quiz-subtitle {
+    margin-top: var(--spacing-48);
   }
-
-  @media (min-width: 1024px) {
-    #quiz-subtitle {
-      margin-top: var(--spacing-48);
-    }
-  }
+}
 
 /* Card Body */
 .card-body {
   padding: var(--spacing-32) var(--spacing-24);
 }
-
 
 /* Game Cards */
 .pickup {
@@ -571,51 +554,46 @@ body {
   background-image: url(./starter-code/assets/images/icon-accessibility.svg);
 }
 
-
-
 @media (min-width: 768px) {
   .card-body,
   .card-header {
     padding-inline: 0;
   }  
 }
-    
 
 @media (min-width: 1200px) {
-    .app {
-      max-width: 1160px;
-      margin-top: 97px;
-    }
-    .screen {
-      display: flex;
-      gap: var(--spacing-128);
-      width: 100%;
-    }
-
-    .card-body {
-      margin-top: 99px;
-    }
-
-    .welcome {
-      width: 40.2%;
-    }
-
-    .pickup {
-      width: 48.6%;
-      margin-top: 0;
-    }
-    .card-body,
-    .card-header {
-      padding: 0;
-    }
+  .app {
+    max-width: 1160px;
+    margin-top: 97px;
+  }
+  .screen {
+    display: flex;
+    gap: var(--spacing-128);
+    width: 100%;
   }
 
+  .card-body {
+    margin-top: 99px;
+  }
+
+  .welcome {
+    width: 40.2%;
+  }
+
+  .pickup {
+    width: 48.6%;
+    margin-top: 0;
+  }
+  .card-body,
+  .card-header {
+    padding: 0;
+  }
+}
 
 /* Score Card */
 /*            */
 
 /* Header Logo */
-
 .card-header-left {
   display: flex;
   gap: clamp(var(--spacing-16), 5vw, var(--spacing-24));
@@ -632,10 +610,7 @@ body {
   background-repeat: no-repeat;
 }
 
-
-
 /* Score Body */
-
 .score-result-wrapper {
   display: flex;
   flex-direction: column;
@@ -674,18 +649,12 @@ body {
   color: var(--white);
 }
 
-
-
 @media (min-width: 1200px) {
   .score-result-wrapper {
     width: 48.76%;
     margin-top: 0;
   }
-  }
-
-
-
-
+}
 
 /*    Quiz      */
 /*             */
@@ -693,10 +662,6 @@ body {
 #current-question {
   margin-top: clamp(var(--spacing-16), 4vw, var(--spacing-24));
 }
-
-
-
-
 
 /* Timer */
 .quiz-timer {
@@ -717,8 +682,6 @@ body {
   width: 10%;
   transition: width 0.2s linear;
 }
-
-
 
 /* Quiz Answer */
 .quiz-answer__list {
@@ -748,6 +711,28 @@ body {
   margin-top: clamp(var(--spacing-16), 4vw, var(--spacing-32));                
 }
 
+.quiz-answer__btn:active {
+  background-color: var(--purple-100);  
+}
+
+.error__noAnswer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .25rem;
+  color: var(--red-500);
+  margin-top: var(--spacing-32);
+}
+
+.error__noAnswerIcon {
+  width: 20px;
+  height: 20px;
+  background-image: url(./starter-code/assets/images/icon-incorrect.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .quiz-answer__option-label {
   display: flex;
   flex-direction: column;
@@ -760,6 +745,17 @@ body {
   text-align: center;
 }
 
+/* Icon Correct or Wrong */
+.quiz-answer__option-icon {
+  width: clamp(var(--spacing-32), 4vw, 2.5rem);
+  height: clamp(var(--spacing-32), 4vw, 2.5rem);
+  margin-left: auto;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Quiz Selected Correct and Wrong Styles */
 .quiz-answer__btn-option.is-selected {
   border: 2px solid var(--purple-600);
 }
@@ -769,15 +765,33 @@ body {
   color: white;
 }
 
-@media (min-width: 1200px) {
-    .quiz-answer {
-      width: 54.80%;
-    }
+.quiz-answer__btn-option.is-correct {
+  border: 2px solid var(--green-500);
+}
 
-    .quiz-headline {
-      width: 45.20%;
-    }
-    .quiz-answer__list {
-      margin-top: 0;
-    }
+.quiz-answer__btn-option.is-wrong {
+  border: 2px solid var(--red-500);
+}
+
+.quiz-answer__btn-option.is-correct .quiz-answer__option-label {
+  background-color: var(--green-500);
+  color: white;
+}
+
+.quiz-answer__btn-option.is-wrong .quiz-answer__option-label {
+  background-color: var(--red-500);
+  color: white;
+}
+
+@media (min-width: 1200px) {
+  .quiz-answer {
+    width: 54.80%;
   }
+
+  .quiz-headline {
+    width: 45.20%;
+  }
+  .quiz-answer__list {
+    margin-top: 0;
+  }
+}
